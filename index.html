@@ -21,15 +21,17 @@
             <div class="tile is-parent is-vertical">
                 <article class="tile is-child box">
                 <p class="title">City Search</p>
-                <form class="box">
+                <form id="search" class="box">
                     <div class="field">
                       <label class="label">City</label>
                       <div class="control">
-                        <input class="input" type="email" placeholder="">
+                        <input class="input" type="text" name="city-search" id="city-search">
                       </div>
                     </div>
-                    <button class="button is-primary">Find Weather</button>
+                    <button type="submit" class="button is-primary">Find Weather</button>
                   </form>
+                  <label class="label">Search History</label>
+                  <ul id="search-history"></ul>
                 </article>
             </div>
 
@@ -42,8 +44,7 @@
                 </div>
                 </article>
                 <article class="tile is-child box">
-                    <p class="title">Main column</p>
-                    <p class="subtitle">With some content</p>
+                    <p class="title">5-Day Forcast</p>
                 <div class="content">
                     <div class="columns">
                         <div class="column">
