@@ -1,13 +1,8 @@
-fetch (
-    'https://api.openweathermap.org/data/2.5/onecall?lat=37.0965&lon=-113.5684&exclude=hourly,daily&appid=f44447ea0651e8a915b6acf9c822cdf5'
-)
+var city = "Ivins"
 
-.then(function(response) {
-    return response.json();
-  })
-  .then(function(data) {
+$.getJSON('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=imperial&appid=f44447ea0651e8a915b6acf9c822cdf5', function(data) {
     console.log(data);
-  });
+})
 
 var searchEl = document.querySelector('#search');
 var citySearch = document.querySelector('#city-search');
