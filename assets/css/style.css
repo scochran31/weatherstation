@@ -3,11 +3,9 @@
     background-color: #ccc;
 }
 
+.weather-container p {
+    font-size: 16px;
+}
 .weather {
     font-size: 22px;
-}
-
-.temp {
-    font-size: 60px;
-    font-weight: bolder;
 }

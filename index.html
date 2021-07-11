@@ -39,11 +39,16 @@
             </div>
 
             <div class="tile is-parent is-vertical is-8">
-                <article class="tile is-child box">
-                    <p class="title">Main column</p>
-                    <p class="subtitle">With some content</p>
-                <div class="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+                <article class="tile is-child box is-medium">
+                    <span class="title" id="currCity">
+                      <p></p>
+                      <p></p>
+                    </span>
+                <div class="content is-medium">
+                    <p class="currTemp">Temp:</p>
+                    <p class="currWind">Wind:</p>
+                    <p class="currHumid">Humidity:</p>
+                    <p class="currUV">UV Index:</p>
                 </div>
                 </article>
                 <article class="tile is-child box">
@@ -55,8 +60,9 @@
                                 <div class="card-content">
                                   <div class="content weather-container" id="day1">
                                     <img src="" alt="" class="icon i1">
-                                    <p class="weather w1"></p>
-                                    <p class="temp t1"></p>
+                                    <p class="temp t1">Temp:</p>
+                                    <p class="wind w1">Wind:</p>
+                                    <p class="humidity h1">Humidity:</p>
                                   </div>
                                 </div>
                               </div>
@@ -66,8 +72,9 @@
                                 <div class="card-content">
                                   <div class="content weather-container" id="day2">
                                     <img src="" alt="" class="icon i2">
-                                    <p class="weather w2"></p>
-                                    <p class="temp t2"></p>
+                                    <p class="temp t2">Temp:</p>
+                                    <p class="wind w2">Wind:</p>
+                                    <p class="humidity h2">Humidity:</p>
                                   </div>
                                 </div>
                               </div>
@@ -77,8 +84,9 @@
                                 <div class="card-content">
                                   <div class="content weather-container" id="day3">
                                     <img src="" alt="" class="icon i3">
-                                    <p class="weather w3"></p>
-                                    <p class="temp t3"></p>
+                                    <p class="temp t3">Temp:</p>
+                                    <p class="wind w3">Wind:</p>
+                                    <p class="humidity h3">Humidity:</p>
                                   </div>
                                 </div>
                               </div>
@@ -88,8 +96,9 @@
                                 <div class="card-content">
                                   <div class="content weather-container" id="day4">
                                     <img src="" alt="" class="icon i4">
-                                    <p class="weather w4"></p>
-                                    <p class="temp t4"></p>
+                                    <p class="temp t4">Temp:</p>
+                                    <p class="wind w4">Wind:</p>
+                                    <p class="humidity h4">Humidity:</p>
                                   </div>
                                 </div>
                               </div>
@@ -99,8 +108,9 @@
                                 <div class="card-content">
                                   <div class="content weather-container" id="day5">
                                     <img src="" alt="" class="icon i5">
-                                    <p class="weather w5"></p>
-                                    <p class="temp t5"></p>
+                                    <p class="temp t5">Temp:</p>
+                                    <p class="wind w5">Wind:</p>
+                                    <p class="humidity h5">Humidity:</p>
                                   </div>
                                 </div>
                             </div>
@@ -112,6 +122,7 @@
         </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js" integrity="sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/js/script.js"></script>   
 </body>
 </html>
