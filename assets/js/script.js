@@ -6,11 +6,11 @@ $(document).ready(function () {
                 //Search for City
                 $.getJSON('https://api.openweathermap.org/data/2.5/forecast?q=' + location + '&appid=f44447ea0651e8a915b6acf9c822cdf5',
                         function (data) {
-                                console.log(data)
+                                // console.log(data)
                                 var lat = data.city.coord.lat;
-                                console.log(lat);
+                                // console.log(lat);
                                 var lon = data.city.coord.lon;
-                                console.log(lon);
+                                // console.log(lon);
                                 var city = data.city.name;
                                 var dt = dayjs().format('M/D/YY');
 
@@ -18,7 +18,7 @@ $(document).ready(function () {
 
                                 $.getJSON('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&units=imperial&exclude=minutely&excluded=hourly&appid=f44447ea0651e8a915b6acf9c822cdf5',
                                         function (data) {
-                                                console.log(data);
+                                                // console.log(data);
 
                                                 var currIcon = "http://openweathermap.org/img/w/" + data.current.weather[0].icon + ".png";
                                                 var currTemp = data.current.temp;
@@ -88,17 +88,28 @@ $(document).ready(function () {
 });
 
 function addCity () {
+        var location = document.getElementById('search');
+        var cityList = document.getElementById('history');
         var savedCities = JSON.parse(localStorage.getItem('All Cities'));
         if (savedCities == null) savedCities = [];
-        var location = $('#search').val();
-        var newCity = {
-                'City': location
-        };
+        var newCity = location.value;
+        
         localStorage.setItem('City', JSON.stringify(newCity));
         savedCities.push(newCity);
         localStorage.setItem('All Cities', JSON.stringify(savedCities));
+        
+        
+        cityList.innerHTML += '<p>' + newCity + '</p></br>';
+        location.value = '';
 };
+
 document.getElementById('searchBtn').addEventListener('click', function () {
         addCity();
 }, false);
 
+// window.onload = function cityHistory () {
+//         var cityList = document.getElementById('history');
+//         var cityHist = JSON.parse(localStorage.getItem('All Cities'));
+//         for (var i = 0; i < cityHist.length; i ++)
+//         cityList.innerHTML =+ '<p>' + cityHist[i] + '</p></br>'
+// }
