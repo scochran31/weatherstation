@@ -10,11 +10,11 @@ function formatDate(value) {
 $('#srchBtn').on('click', function (event) {
     event.preventDefault();
     var searchEL = $('#citySearch')
-    var findCity = $(searchEL).val().trim()
+    var findCity = searchEL.val().trim()
 
     coordSearch(findCity)
 
-    $(searchEL).val('')
+    searchEL.val('')
 });
 
 function coordSearch(findCity) {
