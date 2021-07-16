@@ -1,8 +1,11 @@
 var savedCities = [];
-var citySearch = "";
 var currInfoEl = $('#currInfo');
 var weatherCardEl = $('#weatherCards');
-var date = dayjs().format('M/D/YY');
+
+function formatDate(value) {
+    var getDate = moment.unix(value).format('M/D/YY');
+    return getDate;
+}
 
 $('#srchBtn').on('click', function (event) {
     event.preventDefault();
@@ -57,7 +60,7 @@ function weatherCall(lat, lon) {
 
 function currWeath(data) {
     var currIcon = "http://openweathermap.org/img/w/" + data.current.weather[0].icon + ".png";
-    $('#city').html(`${cityName}` + '  ' + `(${date})` + '  ' + `<img src="${currIcon}" alt="">`).addClass('has-text-white')
+    $('#city').html(cityName + '   ' + '(' + formatDate(data.current.dt) + ')').addClass('has-text-white')
     $('#currInfo').addClass('has-background-white')
     $('#temp').text('Temp: ' + data.current.temp + '°F')
     $('#wind').text('Wind: ' + data.current.wind_speed + 'MPH')
@@ -73,15 +76,30 @@ function weathCard(data) {
         var col = $('<div>').addClass('column has-background-link')
         var card = $('<div>').addClass('card')
         var cardContent = $('<div>').addClass('card-content')
-        // var cardDate = $('<h4>').text()
+        var cardDate = $('<h4>').text(formatDate(data.daily[i].dt))
         var cardIcon = $('<div>').append($('<img>').attr('src', iconImg))
         var temp = $('<p>').text('Temp: ' + Math.floor(data.daily[i].temp.max) + '°F')
         var wind = $('<p>').text('Wind: ' + data.daily[i].wind_speed + 'MPH')
         var humidity = $('<p>').text('Humidity: ' + data.daily[i].humidity + '%')
 
-        $(cardContent).append(cardIcon, temp, wind, humidity)
+        $(cardContent).append(cardDate, cardIcon, temp, wind, humidity)
         $(card).append(cardContent)
         $(col).append(card)
         $(weatherCardEl).append(col)
     }
 }
+
+function addCity(input) {
+    if (savedCities === 5) {
+        savedCities.pop();
+        savedCities.push(input);
+    } else {
+        savedCities.push(input);
+    } 
+    for (var i = 0; i < savedCities.length; i++) {
+        localStorage.setItem('City' + i, JSON.stringify(savedCities[i]));
+    }
+}
+
+addCity();
+console.log(savedCities);
