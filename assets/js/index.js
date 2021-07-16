@@ -59,7 +59,7 @@ function weatherCall(lat, lon) {
 }
 
 function currWeath(data) {
-    var currIcon = "http://openweathermap.org/img/w/" + data.current.weather[0].icon + ".png";
+    var currIcon = "https://openweathermap.org/img/w/" + data.current.weather[0].icon + ".png";
     $('#city').html(cityName + '   ' + '(' + formatDate(data.current.dt) + ')').addClass('has-text-white')
     $('#currInfo').addClass('has-background-white')
     $('#temp').text('Temp: ' + data.current.temp + '°F')
@@ -72,7 +72,7 @@ function weathCard(data) {
     $('#future').addClass('has-text-white pt-20').text('5 Day Forecast: ')
     for (var i = 1; i < 6; i++) {
         var icon = data.daily[i].weather[0].icon
-        var iconImg = "http://openweathermap.org/img/w/" + icon + ".png"
+        var iconImg = "https://openweathermap.org/img/w/" + icon + ".png"
         var col = $('<div>').addClass('column has-background-link')
         var card = $('<div>').addClass('card')
         var cardContent = $('<div>').addClass('card-content')
@@ -102,4 +102,3 @@ function addCity(input) {
 }
 
 addCity();
-console.log(savedCities);
