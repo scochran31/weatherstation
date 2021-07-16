@@ -12,7 +12,9 @@
   * [Questions](#questions)
 
   ## Description
-  Search for and find a forecast for your location
+  Search for and find a forecast for your location. \
+  ![Screen Shot 2021-07-16 at 4 35 34 PM](https://user-images.githubusercontent.com/79678327/126014740-7ca6ee72-4ffb-424a-941b-128ceb90b0a7.png)
+
 
   ## Installation
   Visit:  https://scochran31.github.io/weatherstation/ and search for your location! 
